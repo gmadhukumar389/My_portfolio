@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import { personalInfo } from "@/lib/data";
-import { Mail, Phone, MapPin, LinkedinIcon, GithubIcon } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Contact() {
   return (
@@ -67,10 +68,10 @@ export default function Contact() {
 
           <div className="flex justify-center gap-4 pt-8">
             {[
-              { icon: LinkedinIcon, href: "#" },
-              { icon: GithubIcon, href: "#" },
-              { icon: Mail, href: `mailto:${personalInfo.email}` },
-            ].map(({ icon: Icon, href }, i) => (
+  { icon: FaLinkedin, href: "#" },
+  { icon: FaGithub, href: "#" },
+  { icon: Mail, href: `mailto:${personalInfo.email}` },
+].map(({ icon: Icon, href }, i) => (
               <a
                 key={i}
                 href={href}
