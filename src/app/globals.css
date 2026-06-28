@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #DADCE0 transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #DADCE0;
+    border-radius: 3px;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-surface text-text-primary font-sans antialiased;
+  }
+
+  ::selection {
+    background: #E8F0FE;
+    color: #1A73E8;
+  }
+}
+
+@layer components {
+  .material-card {
+    @apply bg-white rounded-xl border border-border-light transition-all duration-200;
+  }
+
+  .material-card:hover {
+    @apply shadow-google-md border-border;
+  }
+
+  .blue-gradient-text {
+    background: linear-gradient(135deg, #1A73E8 0%, #4285F4 50%, #1A73E8 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-2;
+  }
+
+  .section-subheading {
+    @apply text-lg text-text-secondary max-w-2xl mx-auto;
+  }
+
+  .google-button-primary {
+    @apply px-6 py-2.5 bg-[#1A73E8] text-white font-medium rounded-full transition-all duration-200 hover:bg-[#1557B0] hover:shadow-google-md active:scale-[0.98] text-sm;
+  }
+
+  .google-button-outline {
+    @apply px-6 py-2.5 border border-border text-text-primary font-medium rounded-full transition-all duration-200 hover:bg-surface-secondary hover:border-[#1A73E8] hover:text-[#1A73E8] active:scale-[0.98] text-sm;
+  }
+
+  .progress-bar {
+    @apply h-full rounded-full bg-[#1A73E8] transition-all duration-1000 ease-out;
+  }
+
+  .timeline-line {
+    @apply absolute left-1/2 -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-transparent via-[#1A73E8]/30 to-transparent;
+  }
+
+  .timeline-dot {
+    @apply absolute left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#1A73E8] shadow-sm z-10;
+  }
+
+  .chip {
+    @apply px-3 py-1 bg-[#E8F0FE] text-[#1A73E8] text-xs font-medium rounded-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-grid {
+    background-image:
+      linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+}
